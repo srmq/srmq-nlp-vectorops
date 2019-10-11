@@ -79,6 +79,7 @@
 			<groupId>br.cin.ufpe.nlp</groupId>
 			<artifactId>srmq-nlp-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
