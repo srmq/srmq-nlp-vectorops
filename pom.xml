@@ -8,11 +8,58 @@
 	<packaging>bundle</packaging>
 
 	<name>srmq-nlp-vectorops</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/srmq/srmq-nlp-vectorops</url>
+	
+	<licenses>
+		<license>
+			<name>GNU General Public License, Version 3 or later</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+			<distribution>manual</distribution>
+			<comments>A free, strong copyleft license for software and other kinds of works</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<email>srmq@cin.ufpe.br</email>
+			<name>Sergio Queiroz</name>
+			<url>https://github.com/srmq</url>
+			<id>srmq</id>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<id>srmq-maven-repo</id>
+			<name>SRMQ's development repository</name>
+			<url>https://srmq-maven-repo.appspot.com</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>srmq-maven-repo</id>
+			<name>SRMQ's development repository</name>
+			<url>https://srmq-maven-repo.appspot.com</url>
+			<layout>default</layout>
+		</snapshotRepository>
+	</distributionManagement>	
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<lucene.version>5.1.0</lucene.version>
+		<lucene.version>7.1.0</lucene.version>
 	</properties>
 
 	<dependencies>
@@ -51,7 +98,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
-			<version>1.8</version>
+			<version>1.18</version>
 		</dependency>
 	</dependencies>
 	<build>

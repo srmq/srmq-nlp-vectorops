@@ -33,6 +33,7 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.BytesRef;
+import org.apache.lucene.store.SleepingLockWrapper;
 
 import br.cin.ufpe.nlp.api.vectors.VectorVocab;
 
@@ -223,10 +224,8 @@ public class LuceneBackedVectorVocab implements VectorVocab {
 		}
 		IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
         iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-        iwc.setWriteLockTimeout(1000);
-        
 		
-		IndexWriter writer = new IndexWriter(this.dir, iwc);
+		IndexWriter writer = new IndexWriter(new SleepingLockWrapper(this.dir, 1000), iwc);
 		return writer;
 	}
 	
