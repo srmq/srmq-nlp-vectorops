@@ -111,7 +111,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-
+						<_noee>true</_noee>
 						<Import-Package>br.cin.ufpe.nlp.api.vectors,*;resolution:=optional</Import-Package>
 						<Export-Package>br.cin.ufpe.nlp.api.vectors</Export-Package>
 						<Private-Package>br.cin.ufpe.nlp.vectorops.*</Private-Package>
